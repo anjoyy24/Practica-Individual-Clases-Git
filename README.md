@@ -3,7 +3,7 @@
 ## ¿Qué es un control de versiones?
 Un historial de cada cambio que se realiza del código fuente de un proyecto
 
-<img src="https://unity.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Ffuvbjjlp%2Fproduction%2F1e2f049c087a0e525585f6108abdaaaba0befd9b-1920x1080.jpg&w=3840&q=75" width="300" height="200">
+<img src="https://pistachitos.com/wp-content/uploads/2017/09/cvs.png" width="300" height="200">
 
 ### <p style="color:#b833ff;">¿Por qué es tan importante?.</p>
 * **Rendimiento**
@@ -159,6 +159,64 @@ Luego de hacer los cambios, añadir de nuevo el commit y luego crear un nuevo co
 git checkout ramaAMover     //me pongo en la rama que quiero mover 
 git rabase main             //Aqui reaplica los commits de la otra rama encima de main, o sea se reescriben los commits
 ```
+
+# Clase 4 - GIT HUB, PUSH, PULL Y PULL REQUEST
+ 
+ ## Diferencia entre git y github
+ * **Git.** Es un controlador de versiones.
+ * **GitHub. **ES un servicio de alojamiento en la nube, ejemplo: bitbucket, gitLab, gitHub, entre otros.
+
+ ## Repositorios remotos
+ Es una copia de mi proyecto en la nube (los servidores de GitHub) y que puedo sincronizar con mi repositorio local.
+
+ ### Enlazar un repositorio local con un repositorio remoto
+ `git remote add Origin URLDelRepo` ⮕ Enlaza, el `origin` es el nombre del alias es como un estándar de nombre para un alias
+
+`git clone URLdelRepositorio` ⮕ Sirve para clonar
+
+ ### Generar llaves SSH
+ Estas proporcionan un método de autenticidad seguro y conveniente para acceder a ramas remotas.
+
+### Sincronizando con un repositorio remoto
+* **PUSH.**
+`git push Origin Rama` ⮕ Sirve para enviar los commits de mi repositorio local a un repositorio remoto
+
+* **PULL.**
+`git  pull` ⮕ Trae todos los cambios del repositorio remoto al repositorio actual
+    
+    El `git pull` es una mezcla de dos comandos:
+    * `git fetch` ⮕ Descarga commits y referencias del repositorio remoto al local
+    * `git merge` ⮕ Es el que fisiona la rama remota obtenida con la rama local actual
+
+### Crear rama remota
+Para esto la rama debe de existir en el repositorio local y se sube al repositorio remoto con: `git push -u origin nombreRama`
+
+### Eliminar ramas de mi repositorio local que no se usan
+`git remote prune origin` ⮕ Elimina referencias locales a ramas remotas que ya no existen en el repositorio remoto 
+
+## Pull request
+Un pull request o PR es una solicitud de revisión del código
+
+**¿Cómo hacer un pull request?**
+* GitHUb me mostrará una opción que dice "Compare & pull request" cuando subo la rama
+* Elijo la rama base y la rama de comparación
+* Se agrega un título y una descripción
+* Y por último sigue la revisión del equipo, donde los miembros del equipo pueden comentar, sugerir cambios, aprobar o rechazar 
+
+
+
+
+
+## <p style="color:#ff8333;">Comandos extra aprendidos.</p>
+<img src="https://i.ytimg.com/vi/MlVtzWL2uRs/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDQY3d6LH33WU0VW1f1lELJj04Dug" width="100" height="80">
+
+`git branch -a` ⮕Permite revisar ramas que existen en un repositorio remoto
+
+ `git remote` ⮕ Para ver el alias
+
+`git remote -v` ⮕ Indica el alias y a que URL está apuntando
+
+
 
 
 
