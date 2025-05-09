@@ -250,7 +250,45 @@ Para esto existen 3 formas, según el contexto, riesgo y urgencia, son los sigui
 * **Show.** Abre una petición para que sean revisados por CI pero se fusiona inmediatamente
 * **Ask.** Abre una PR para discutir los cambios antes de fusionarlos
 
+# Clase 6 - BUENAS PRÁCTICAS
+## ¿Por qué son importantes?
+* Funcionan como un estándar para la legibilidad
+* Resuelven conflictos durante el desarrollo
+* El historial de commits es más legible
 
+## Buenas prácticas en commits
+### ¿Cada cuánto se debe hacer un commit?**
+A menudo, pero que sean commits necesario y que no sean sin sentido.
+### Escribir buenos commits
+* Usar verbos imperativos preferiblemente en inglés (fix, add, remove, change)
+* Sin signos de puntuación a parte de ","
+* Máximo 50 carácteres para un commit
+* Formato común: `<tipo-de-commit>[scope-¿Dónde?]<descripción>`
+#### Prefijos de commits
+* **feat.** para nueva caterística 
+* **fix.** para corregir un bug
+* **docs.** para documentación
+* **refactor.** para refactorización de código
+* **test.** para test 
+
+## Buenas prácticas en ramas
+### Escribir buenos nombres para las ramas
+Las ramas deben de tener nombres descriptivos
+Ejemplo:
+
+`bug/avoid-creating-load-twice`
+
+`hotfix/fix-typo-in-name`
+#### Convenciones comunes
+`feature/` ⮕ Para nuevas funcionalidades
+
+`bugfix/` ⮕ Para corrección de errores
+
+`hotfix/` ⮕ Para errores críticos en producción
+
+`test/` ⮕ Para pruebas
+
+`docs/` ⮕ Para documentación
 
 
 
