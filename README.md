@@ -290,6 +290,33 @@ Ejemplo:
 
 `docs/` ⮕ Para documentación
 
+# Clase 7 - DESHACER CAMBIOS
+Se deshace cambios cuando el proyecto deja de funcionar, cuando queremos recuperar una parte del código que eliminamos o cuando queremos recuperar archivos que eliminamos.
+## Comandos destructivos
+Afectan el historial de los commits realizados
+## Comandos no destructivos
+Trabajan en base al historial sin afectarlo
+ 
+### GIT RESET
+**No destructivo:**
+
+`git reset --soft` ⮕ Deshace commit, mantiene stanging y archivos
+
+`git reset --mixed` ⮕ Deshace commit, mantiene archivos, borra stanging
+
+**Destructivo:**
+
+`git reset --hard` ⮕ Borra commit, staging y archivos locales
+
+`git reset --hard` + push ⮕ Modifica historia remota (Peligrosooo!)
+
+### GIT REVERT
+Es un comando **no destructivo** que se usa para deshacer un commit ya realizado, pero en lugar de eliminarlo del historial crea un nuevo commit que revierte los cambios del commit original
+
+
+`git revert <id-del-commit>` ⮕ Deshace el commit, no borra el historial y es seguro para la colaboración
+
+
 
 
 
