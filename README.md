@@ -217,6 +217,38 @@ Un pull request o PR es una solicitud de revisión del código
 `git remote -v` ⮕ Indica el alias y a que URL está apuntando
 
 
+# Clase 5 - GITFLOW
+## Modelos de trabajo
+### 1. GitFlow
+Es la manera en la que el equipo de desarrolo va a utilizar Git para trabajar de manera colaborativa, en sí es un flujo de trabajo.
+
+GitFlow usa las siguientes ramas:
+* Main ⮕ Con el código de producción
+* Develop ⮕ Código que tiene que ser validado y probado
+* Feature ⮕ Características nuevas para el proyecto
+* Release ⮕ Cambios de último momento
+* HotFix ⮕ Parches o arreglar pequeños bugs
+### 2. GitHub Flow
+* Solo se basa en main y ramas de funcionalidad 
+* Se usa cuando hay una integración continua (CI)
+### 3. Trunk-Based Development
+Es cuando solo hay una rama principal, hay ramas de funcionalidad pero son cortas
+
+Aqui se muestra una tabla de diferencias:
+
+| **Característica** | **Git Flow** | **GitHub Flow** | **Trunk-Based Development** |
+|--------------------| ------------ | ----------------| --------------------------- |
+| Modelo de ramas | Múltiples ramas (`main`, `develop`, `feature`, `release`, `hotfix`) | `main` + ramas de feature | Solo `main` (y ramas muy cortas si se usan) |
+|  Uso  | Versiones planificadas | Despliegue continuo  | Integración y despliegue continuo |
+| Tiempo de integración | Semanal o por versión  | Diaria o por cambio | Varias veces al día |
+| Duración de ramas | Larga | Corta  | Muy corta (horas o 1-2 días) |
+| Ejemplo de ramas típicas  | `main`, `develop`, `feature/login`, `release/1.0`, `hotfix/bug`     | `main`, `feature/login`               | `main`, (ocasionalmente `feature/login`)    |
+
+## Compartir cambios según el contexto
+Para esto existen 3 formas, según el contexto, riesgo y urgencia, son los siguientes
+* **Ship.** Fusiona en la rama sin revisión previa.
+* **Show.** Abre una petición para que sean revisados por CI pero se fusiona inmediatamente
+* **Ask.** Abre una PR para discutir los cambios antes de fusionarlos
 
 
 
