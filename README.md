@@ -316,7 +316,78 @@ Es un comando **no destructivo** que se usa para deshacer un commit ya realizado
 
 `git revert <id-del-commit>` ⮕ Deshace el commit, no borra el historial y es seguro para la colaboración
 
+# Clase 8 - HOOKS, ALIAS Y TRUCOS EN GIT
+## ¿Qué es un hook?
+Son scripts que se ejecutan automáticamente en eventos de git 
+HOOKS = Automatización
+### Hooks del lado del cliente
+Se encuentra en: .git/hooks/
+Estos se ejecutan en la máquina del desarrollador, durante operaciones locales como los commits, cambios de ramas, merges y entre otros más
+Hooks del lado del cliente:
+* `pre-commit` ⮕ Se usa para lint, tests, formateo, se ejecuta antes de hacer un commit
+
+* `prepare-commit-msg` ⮕ Autogenera mensajes, se ejecuta antes de escribir mensaje de commit
+
+* `commit-msg` ⮕ Valida el formato del mensaje, se ejecuta después de escribir el mensaje
+
+* `post-commit` ⮕ Se usa para notificaciones y logs, se ejecuta después de hacer un commit
+
+* `post-checkout` ⮕ Se usa para configurar el entorno y limpiar cachés, se ejecuta después de cambiar de rama
+
+* `post-merge` ⮕ Se usa para reinstalar dependencias, se ejecuta después de el merge
+
+* `pre-push` ⮕ Se usa para Test y revisión de código, se ejecuta antes de hacer git push
+ 
+### Hooks del lado del servidor 
+Se ejecutan en el servidor (como GitHub)durante el push o receive entre otroos
+Hooks del lado del servidor:
+* `pre-receive` ⮕ Para verificar que los commits que están para ser guardados están bien formados y que el usuario tiene permisos para grabar los commits.
+
+* `update` ⮕ Verifica cambios específicos en ramas, se ejecuta una vez por cada rama que se está actualizando en un push
+
+* `post receive` ⮕ Envía notificaciones (email, discord...)
+
+### Crear un hook
+* Crear un archivo: `nombre-del-hook`
+* Poner el archivo en la carpeta `.git/hooks`
+* Y en el poner el código a ejecutar
 
 
+## Alias
+### ¿Qué es un alias?
+Son comandos cortos personalizados, son atajos para comandos largos
+Ejemplos:
+* De `status` ⮕ `st` 
+* De `commit` ⮕ `co`
+
+### Creando un alias
+`git config --global alias.<alias> 'comando'`
+
+Aplicando:
+
+`git config --global alias.st "status"`
+
+`git config --global alias.co "commit"`
+
+## Trucos en Git
+### Guardar cambios temporalmente
+* `git stash` ⮕ Guarda cambios no commiteados
+* `git stash -u`⮕ Guarda cambios no commiteados y archivos sin seguimiento
+* `git stash pop` ⮕ Restaura los cambios guardados con stash y elimina esa entrada del stash
+
+### Aplicar cambios de commits en específico
+`git cherry-pick <SHA>` ⮕ Aplica un commit específico de otra rama al historial actual 
+
+### Detectar qué commit es el que ha introducido un bug
+* `git bisect` ⮕ Comienza una búsqueda binaria para encontrar un commit que introdujo un bug
+* `git bisect start` ⮕ Inicia el proceso de bisect
+* `git bisect bad`⮕ Marca el commit actual com problemático
+* `git bisect good` ⮕ Marca un commit anterior como correcto
+* `git bisect reset` ⮕ Sale del modo bisect y vuelve al estado original del repositorio
+
+### Cambiar nombre de un commit
+* `git commit --amend -m <descripcion-commit>` ⮕ Cambia el mensaje del último commit 
+### Recuperar un archivo en concreto de otra rama o commit
+* `git checkout <SHA><archivo>` ⮕ Recupera una versión específica de un archivo desde otro commit o rama
 
 
